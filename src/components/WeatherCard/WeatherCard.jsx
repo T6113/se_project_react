@@ -11,7 +11,6 @@ function WeatherCard({ weatherData }) {
   });
 
   const weatherOption = filteredOptions[0];
-  console.log(weatherData)
 
   return (
     <section className="weather-card">

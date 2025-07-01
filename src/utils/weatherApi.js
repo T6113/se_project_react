@@ -33,3 +33,5 @@ const getWeatherType = (temperature) => {
     return "cold";
   }
 };
+
+export default getWeather;
