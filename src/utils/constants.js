@@ -10,20 +10,60 @@ export const weatherOptions = [
     url: new URL("../images/day/Day.2.png", import.meta.url).href,
   },
 
+  {
+    day: true,
+    condition: "rain",
+    url: new URL("../images/day/Day.3.png", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "thunder",
+    url: new URL("../images/day/Day.4.png", import.meta.url).href,
+  },
+  {
+    day: true,
+    condition: "snow",
+    url: new URL("../images/day/Day.5.png", import.meta.url).href,
+  },
+
+  {
+    day: true,
+    condition: "gloomy",
+    url: new URL("../images/day/Day.6.png", import.meta.url).href,
+  },
+
   //add remainding day images//
 
-  //{
-  // day: false,
-  // condition: "clear",
-  // url: new URL("../images/night/night.1.png", import.meta.url).href,
-  //},
+  {
+    day: false,
+    condition: "clear",
+    url: new URL("../images/night/night.1.png", import.meta.url).href,
+  },
   {
     day: false,
     condition: "cloudy",
     url: new URL("../images/night/night.2.png", import.meta.url).href,
   },
-
-  
+  {
+    day: false,
+    condition: "rain",
+    url: new URL("../images/night/night.3.png", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "thunder",
+    url: new URL("../images/night/night.4.png", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "snow",
+    url: new URL("../images/night/night.5.png", import.meta.url).href,
+  },
+  {
+    day: false,
+    condition: "gloomy",
+    url: new URL("../images/night/night.6.png", import.meta.url).href,
+  },
 
   //add remaining night images//
 ];
@@ -38,6 +78,18 @@ export const defaultClothingItems = [
   {
     _id: 1,
     name: "Hoodie",
+    weather: "warm",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Hoodie.png?etag=5f52451d0958ccb1016c78a45603a4e8",
+  },
+  {
+    _id: 99,
+    name: "Dress",
+    weather: "warm",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Hoodie.png?etag=5f52451d0958ccb1016c78a45603a4e8",
+  },
+  {
+    _id: 9999,
+    name: "Potato",
     weather: "warm",
     link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Hoodie.png?etag=5f52451d0958ccb1016c78a45603a4e8",
   },
