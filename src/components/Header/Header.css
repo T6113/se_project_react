@@ -1,3 +1,5 @@
+@import url(../../vendor/fonts.css);
+
 .header {
   display: flex;
   align-items: center;
@@ -11,12 +13,26 @@
 .header__date-and-location {
   margin: 0;
   font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
 }
 
 .header__clothes-btn {
   margin: 0 20px 0 auto;
   border: none;
   color: #000000;
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.header__username {
+  line-height: 100%;
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
 }
 
 .header__user-container {

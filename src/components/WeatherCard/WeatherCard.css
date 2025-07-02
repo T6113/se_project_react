@@ -13,6 +13,11 @@
   position: absolute;
   top: 20px;
   left: 16px;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
+  letter-spacing: 0;
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
 }
 
 .weather-card__image {
