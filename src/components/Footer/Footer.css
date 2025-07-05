@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__text {
+  font-family: Cabinet Grotesk;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  vertical-align: bottom;
+  /* justify-content: flex-end; */
+}
+
+.footer__year {
+  display: flex;
+  /* justify-items: flex-start; */
+  font-family: Cabinet Grotesk;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  vertical-align: bottom;
+}
