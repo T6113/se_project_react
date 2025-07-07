@@ -16,7 +16,7 @@ function App() {
   });
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-  // const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
 
   const handleCardClick = (card) => {
     setActiveModal("preview");
@@ -62,11 +62,11 @@ function App() {
     <div className="page">
       <div className="page__content">
         <Header handleAddClick={handleAddClick} weatherData={weatherData} />
-        {/* <Main
+        <Main
           weatherData={weatherData}
           handleCardClick={handleCardClick}
           clothingItems={clothingItems}
-        /> */}
+        />
       </div>
       <ModalWithForm
         title="New garment"
