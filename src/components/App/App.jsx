@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
-import { coordinates, APIkey } from "../../utils/constants";
+import {
+  coordinates,
+  APIkey,
+  defaultClothingItems,
+} from "../../utils/constants";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -133,8 +137,7 @@ function App() {
         </fieldset>
       </ModalWithForm>
       <ItemModal
-        isOpen={activeModal === "add-garment"}
-        // activeModal={activeModal}
+        isOpen={activeModal === "preview"}
         card={selectedCard}
         onClose={closeActiveModal}
       />
