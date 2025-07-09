@@ -11,10 +11,12 @@ function ModalWithForm({ children, buttonText, title, isOpen, onClose }) {
         </button>
         <form className="modal__form">
           {children}
-          <button type="submit" className="modal__submit">
-            {" "}
-            {buttonText}
-          </button>
+          <div className="modal__submit-btn">
+            <button type="submit" className="modal__submit">
+              {" "}
+              {buttonText}
+            </button>
+          </div>
         </form>
       </div>
     </div>

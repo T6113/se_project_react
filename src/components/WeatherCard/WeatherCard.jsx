@@ -10,7 +10,14 @@ function WeatherCard({ weatherData }) {
     );
   });
 
-  const weatherOption = filteredOptions[0];
+  const currentWeather =
+    filteredOptions[0] ??
+    weatherOptions.find(
+      (option) =>
+        option.day === weatherData.isDay && option.condition === "clear"
+    );
+
+  const weatherOption = currentWeather;
 
   return (
     <section className="weather-card">
