@@ -26,8 +26,10 @@
 .modal__close {
   position: absolute;
   top: 20px;
-  right: 28px;
+  right: 30px;
   border: none;
+  background-color: transparent;
+  padding: 0;
 }
 
 .modal__content {
@@ -56,10 +58,14 @@
 .modal__footer {
   background-color: #fff;
   position: relative;
-  padding: 28px 28px 36px;
-  box-sizing: border-box;
-  max-width: 496px;
-  max-height: 436px;
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  /* font-style: Bold;
+  font-size: 20px;
+  line-height: 24px; */
+  padding: 20px 32px 32px;
+  /* max-width: 496px;
+  max-height: 436px; */
 }
 
 .modal__form {
@@ -136,6 +142,9 @@
   margin: 0;
   max-width: 498px;
   border-radius: 16px;
+  overflow: hidden;
+  background-color: #fff;
+  position: relative;
 }
 
 .modal__image {
@@ -143,27 +152,22 @@
   margin: 0;
   padding: 0;
   max-width: 498px;
-  border-radius: 16px;
 }
 
 .modal__caption {
-  padding-top: 20px;
-  padding-left: 32px;
+  /* padding-top: 20px;
+  padding-left: 32px; */
   margin: 0;
 }
 
-.modal__weather {
+/* .modal__weather {
   padding-top: 12px;
   padding-left: 32px;
   padding-bottom: 32px;
-}
+} */
 
-.modal__close_preview {
-  border: none;
-  width: 16px;
-  height: 16px;
-  background-color: none;
-  list-style-type: none;
+/* .modal__close_preview {
   color: #ffffff;
-  position: absolute;
-}
+  padding-top: 24px;
+  padding-right: 24px;
+} */

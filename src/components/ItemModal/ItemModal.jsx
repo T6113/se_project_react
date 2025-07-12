@@ -1,10 +1,10 @@
 import "./ItemModal.css";
-import icon from "../../images/Group.119.svg";
+import icon from "../../images/Group_119.svg";
 
 function ItemModal({ isOpen, onClose, card }) {
   return (
     <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
-      <div className="modal__content modal__content_type_image">
+      <div className="modal__content_type_image">
         <button
           onClick={onClose}
           type="button"
