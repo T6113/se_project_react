@@ -1,7 +1,14 @@
 import "./ModalWithForm.css";
 import icon from "../../images/Group.119.svg";
 
-function ModalWithForm({ children, buttonText, title, isOpen, onClose }) {
+function ModalWithForm({
+  children,
+  buttonText,
+  title,
+  isOpen,
+  onClose,
+  onSubmit,
+}) {
   return (
     <div className={`modal ${isOpen ? "modal_opened" : ""}`}>
       <div className="modal__content modal__content_add-btn">
@@ -9,7 +16,7 @@ function ModalWithForm({ children, buttonText, title, isOpen, onClose }) {
         <button onClick={onClose} type="button" className="modal__close">
           <img src={icon} alt="close-btn" className="modal__close-btn" />
         </button>
-        <form className="modal__form">
+        <form onSubmit={onSubmit} className="modal__form">
           {children}
           <div className="modal__submit-btn">
             <button type="submit" className="modal__submit">
