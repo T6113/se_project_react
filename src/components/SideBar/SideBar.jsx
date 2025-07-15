@@ -1,4 +1,5 @@
 import avatar from "../../images/Ellipse.18.png";
+import "../SideBar.css";
 
 function SideBar() {
   return (

@@ -4,6 +4,7 @@ import logo from "../../images/Logo.svg";
 import avatar from "../../images/Ellipse.18.png";
 import { Link } from "react-router-dom";
 
+
 function Header({ handleAddClick, weatherData }) {
   const currentDate = new Date().toLocaleString("default", {
     month: "long",
