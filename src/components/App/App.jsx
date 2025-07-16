@@ -91,6 +91,7 @@ function App() {
   //array of data not rendering..
   //data needs to render as cards in both Main & profile components
   // handle data(clothingItems) in Main & profile to render
+  // create api for 
   return (
     <CurrentTemperatureUnitContext.Provider
       value={{ currentTemperatureUnit, handleToggleSwitchChange }}

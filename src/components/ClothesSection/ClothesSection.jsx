@@ -1,6 +1,6 @@
 import ItemCard from "../ItemCard/ItemCard";
 import { defaultClothingItems } from "../../utils/constants";
-import "../ClothesSection.css";
+import "./ClothesSection.css";
 
 function ClothesSection({ onCardClick }) {
   const clothingItems = defaultClothingItems;
