@@ -21,7 +21,7 @@ export default function AddItemModal({ onClose, isOpen, onAddItemSubmitBtn }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onAddItemSubmitBtn({ name, link, weather });
+    onAddItemSubmitBtn({ name, imageUrl, weather });
     setName("");
     setImageUrl("");
     setWeather("");

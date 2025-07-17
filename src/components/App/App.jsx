@@ -8,7 +8,6 @@ import {
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
-// import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
 import Profile from "../Profile/Profile";
 import Footer from "../Footer/Footer";
@@ -26,7 +25,7 @@ function App() {
 
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
+  const [clothingItems, setClothingItems] = useState([]);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
 
   const handleToggleSwitchChange = () => {
@@ -63,8 +62,8 @@ function App() {
     setActiveModal("");
   };
 
-  const handleAddItemSubmitBtn = ({ name, link, weather }) => {
-    addItem({ name, link, weather })
+  const handleAddItemSubmitBtn = ({ name, imageUrl, weather }) => {
+    addItem({ name, imageUrl, weather })
       .then((newItem) => {
         setClothingItems((prevItems) => [newItem, ...prevItems]);
         closeActiveModal();
@@ -100,10 +99,6 @@ function App() {
       })
       .catch(console.error);
   }, []);
-
-  //array of data not rendering..
-  //data needs to render as cards in both Main & profile components
-  // handle data(clothingItems) in Main & profile to render
 
   return (
     <CurrentTemperatureUnitContext.Provider
