@@ -3,9 +3,11 @@ import "./SideBar.css";
 
 function SideBar() {
   return (
-    <div className="sidebar">
-      <img className="sidebar__avatar" src={avatar} alt="Sidebar avatar" />
-      <p className="sidebar__username">Terrence Tegegne</p>
+    <div className="sidebar__container">
+      <div className="sidebar__header">
+        <img className="sidebar__avatar" src={avatar} alt="Sidebar avatar" />
+        <p className="sidebar__username">Terrence Tegegne</p>
+      </div>
     </div>
   );
 }

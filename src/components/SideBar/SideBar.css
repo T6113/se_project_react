@@ -1,4 +1,31 @@
+.sidebar__container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 63px; /* 63px from header */
+}
+
+.sidebar__header {
+  display: flex;
+  align-items: center;
+  gap: 16px; /* 16px between avatar and username */
+  min-width: 0;
+}
+
 .sidebar__avatar {
   max-width: 56px;
   max-height: 56px;
+}
+
+.sidebar__username {
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  line-height: 100%;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

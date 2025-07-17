@@ -14,9 +14,8 @@ import Profile from "../Profile/Profile";
 import Footer from "../Footer/Footer";
 import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
-import { Form } from "react-router-dom";
 import AddItemModal from "../AddItemModal/AddItemModal";
-import { getItems } from "../../utils/api";
+import { getItems, addItem, deleteItem } from "../../utils/api";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -65,8 +64,23 @@ function App() {
   };
 
   const handleAddItemSubmitBtn = ({ name, link, weather }) => {
-    setClothingItems((prevItems) => [{ name, link, weather }, ...prevItems]);
-    closeActiveModal();
+    addItem({ name, link, weather })
+      .then((newItem) => {
+        setClothingItems((prevItems) => [newItem, ...prevItems]);
+        closeActiveModal();
+      })
+      .catch(console.error);
+  };
+
+  const handleRemoveItem = (id) => {
+    deleteItem(id)
+      .then((deletedItem) => {
+        setClothingItems((prevItems) =>
+          prevItems.filter((item) => item._id !== id)
+        );
+        // Optionally close modal or show feedback
+      })
+      .catch(console.error);
   };
 
   useEffect(() => {
@@ -82,8 +96,7 @@ function App() {
   useEffect(() => {
     getItems()
       .then((data) => {
-        console.log(data);
-        //set the clothing items using the data that was returned.
+        setClothingItems(data);
       })
       .catch(console.error);
   }, []);
@@ -91,7 +104,7 @@ function App() {
   //array of data not rendering..
   //data needs to render as cards in both Main & profile components
   // handle data(clothingItems) in Main & profile to render
-  // create api for 
+
   return (
     <CurrentTemperatureUnitContext.Provider
       value={{ currentTemperatureUnit, handleToggleSwitchChange }}
@@ -109,12 +122,19 @@ function App() {
                   currentTemperatureUnit={currentTemperatureUnit}
                   onCardClick={handleCardClick}
                   clothingItems={clothingItems}
+                  onCardDelete={handleRemoveItem}
                 />
               }
             />
             <Route
               path="/profile"
-              element={<Profile onCardClick={handleCardClick} />}
+              element={
+                <Profile
+                  onCardClick={handleCardClick}
+                  clothingItems={clothingItems}
+                  onCardDelete={handleRemoveItem}
+                />
+              }
             />
           </Routes>
 

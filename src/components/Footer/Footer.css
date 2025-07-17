@@ -1,29 +1,22 @@
 .footer {
-  padding-left: 40px;
-  margin: 0;
-  display: flex;
   font-family: Cabinet Grotesk;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
+  margin-top: 80px;
+  margin-bottom: 24px;
 }
 
-/* .footer__text {
-  font-family: Cabinet Grotesk;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 20px;
+.footer__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   /* padding-left: 40px;
-  padding-bottom: 24px;
-  padding-top: 20px;
-  display: flex;
-  justify-content: space-between; 
-  vertical-align: bottom;
-  justify-content: flex-end; */
+  padding-right: 40px; */
+}
 
-
-/* .footer__year {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-} */
+.footer__developer,
+.footer__year {
+  font-size: 16px;
+  color: #222;
+}

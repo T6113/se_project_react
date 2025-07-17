@@ -6,9 +6,9 @@ function ClothesSection({ onCardClick }) {
   const clothingItems = defaultClothingItems;
   return (
     <div className="clothes__section">
-      <div>
+      <div className="clothes__section-header">
         <p>Your items</p>
-        <button>+ Add New</button>
+        <button>+ Add new</button>
       </div>
       <ul className="clothes__section-list">
         {clothingItems.map((item) => {

@@ -3,9 +3,10 @@ import "./Footer.css";
 function Footer() {
   return (
     <footer className="footer">
-      <p className="footer__text">
-        Developed by Thomisha Myers {new Date().getFullYear()}
-      </p>
+      <div className="footer__content">
+        <span className="footer__developer">Developed by Thomisha Myers</span>
+        <span className="footer__year">{new Date().getFullYear()}</span>
+      </div>
     </footer>
   );
 }
