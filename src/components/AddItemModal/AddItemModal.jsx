@@ -1,11 +1,19 @@
 import "./AddItemModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function AddItemModal({ onClose, isOpen, onAddItemSubmitBtn }) {
   const [name, setName] = useState("");
-  const [link, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
   const [weather, setWeather] = useState("");
+
+  useEffect(() => {
+    if (isOpen) {
+      setName("");
+      setImageUrl("");
+      setWeather("");
+    }
+  }, [isOpen]);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -22,9 +30,6 @@ export default function AddItemModal({ onClose, isOpen, onAddItemSubmitBtn }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onAddItemSubmitBtn({ name, imageUrl, weather });
-    setName("");
-    setImageUrl("");
-    setWeather("");
   };
 
   return (
@@ -54,13 +59,13 @@ export default function AddItemModal({ onClose, isOpen, onAddItemSubmitBtn }) {
         Image{" "}
         <input
           type="url"
-          name="link"
+          name="imageUrl"
           className="modal__input"
           id="imageUrl"
           placeholder="Image URL"
           required
           onChange={handleImageUrlChange}
-          value={link}
+          value={imageUrl}
         />
       </label>
       <fieldset className="modal__radio-button">
