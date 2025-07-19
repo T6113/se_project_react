@@ -1,9 +1,7 @@
 import ItemCard from "../ItemCard/ItemCard";
-import { defaultClothingItems } from "../../utils/constants";
 import "./ClothesSection.css";
 
-function ClothesSection({ onCardClick }) {
-  const clothingItems = defaultClothingItems;
+function ClothesSection({ onCardClick, clothingItems }) {
   return (
     <div className="clothes__section">
       <div className="clothes__section-header">
