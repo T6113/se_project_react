@@ -1,0 +1,8 @@
+.modal__delete-btn {
+  background-color: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+  margin-left: auto;
+  display: block;
+}

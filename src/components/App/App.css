@@ -1,0 +1,20 @@
+/* import fonts.css here */
+
+@import url(../../vendor/fonts.css);
+
+.page {
+  background-color: #fff;
+  max-width: 1440px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page__content {
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
