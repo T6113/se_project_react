@@ -40,13 +40,13 @@ export default function AddItemModal({ onClose, isOpen, onAddItemSubmitBtn }) {
       onClose={onClose}
       onSubmit={handleSubmit}
     >
-      <label htmlFor="name" className="modal__label">
+      <label htmlFor="add-item-name" className="modal__label">
         Name{" "}
         <input
           type="text"
           name="name"
           className="modal__input"
-          id="name"
+          id="add-item-name"
           placeholder="Name"
           minLength="1"
           maxLength="30"
@@ -55,13 +55,13 @@ export default function AddItemModal({ onClose, isOpen, onAddItemSubmitBtn }) {
           value={name}
         />
       </label>
-      <label htmlFor="imageUrl" className="modal__label">
+      <label htmlFor="add-item-imageUrl" className="modal__label">
         Image{" "}
         <input
           type="url"
           name="imageUrl"
           className="modal__input"
-          id="imageUrl"
+          id="add-item-imageUrl"
           placeholder="Image URL"
           required
           onChange={handleImageUrlChange}
@@ -70,9 +70,12 @@ export default function AddItemModal({ onClose, isOpen, onAddItemSubmitBtn }) {
       </label>
       <fieldset className="modal__radio-button">
         <legend className="modal__ledgend">Select the weather type:</legend>
-        <label htmlFor="hot" className="modal__label modal__label_type_radio">
+        <label
+          htmlFor="add-item-hot"
+          className="modal__label modal__label_type_radio"
+        >
           <input
-            id="hot"
+            id="add-item-hot"
             type="radio"
             name="weatherType"
             className="modal__radio-input"
@@ -82,9 +85,12 @@ export default function AddItemModal({ onClose, isOpen, onAddItemSubmitBtn }) {
           />{" "}
           Hot
         </label>
-        <label htmlFor="warm" className="modal__label modal__label_type_radio">
+        <label
+          htmlFor="add-item-warm"
+          className="modal__label modal__label_type_radio"
+        >
           <input
-            id="warm"
+            id="add-item-warm"
             type="radio"
             name="weatherType"
             className="modal__radio-input"
@@ -94,9 +100,12 @@ export default function AddItemModal({ onClose, isOpen, onAddItemSubmitBtn }) {
           />{" "}
           Warm
         </label>
-        <label htmlFor="cold" className="modal__label modal__label_type_radio">
+        <label
+          htmlFor="add-item-cold"
+          className="modal__label modal__label_type_radio"
+        >
           <input
-            id="cold"
+            id="add-item-cold"
             type="radio"
             name="weatherType"
             className="modal__radio-input"

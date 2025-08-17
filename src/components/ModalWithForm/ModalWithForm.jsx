@@ -1,5 +1,5 @@
 import "./ModalWithForm.css";
-import icon from "../../images/Group.119.svg";
+import icon from "../../images/Group_119.svg";
 
 function ModalWithForm({
   children,

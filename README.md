@@ -5,8 +5,16 @@ A modern React + Vite application that helps users decide what to wear based on 
 - Weather display with real-time temperature and city info
 - Clothing item cards filtered by weather type
 - Add, preview, and remove clothing items
+- User authentication (signup, login, logout)
 - Profile section with sidebar and clothing management
+- Like/unlike clothing items
 - Responsive, clean UI with custom styling
+
+## Backend Repository
+
+**⚠️ Important :** This React frontend requires the backend server to be running for full functionality including authentication, user management, and data persistence.
+
+**Backend Repository:** [https://github.com/T6113/se_project_express](https://github.com/T6113/se_project_express)
 
 ## Getting Started
 
@@ -31,19 +39,32 @@ A modern React + Vite application that helps users decide what to wear based on 
 ## Features
 
 - Weather-based clothing suggestions
+- User authentication (register, login, logout)
 - Add and remove clothing items
-- Profile management
+- Like/unlike clothing items functionality
+- Profile management and editing
+- Protected routes for authenticated users
+- Avatar placeholders for users
 - Responsive design
 
 ## Tech Stack
+
+**Frontend:**
 
 - React
 - Vite
 - CSS Modules
 - React Context API
+- React Router
 - Fetch API
-- Mock API with db.json
 - Modern JavaScript (ES6+)
+
+**Backend:**
+
+- Express.js server (separate repository)
+- JWT authentication
+- MongoDB/Database integration
+- RESTful API endpoints
 
 ---
 

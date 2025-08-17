@@ -38,7 +38,7 @@ function App() {
 
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
-  const [clothingItems, setClothingItems] = useState([]);
+  const [clothingItems, setClothingItems] = useState(defaultClothingItems);
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [isLoggedIn, setIsLoggedIn] = useState(false); // Add authentication state
   const [currentUser, setCurrentUser] = useState(null); // Add current user state
@@ -197,9 +197,9 @@ function App() {
   useEffect(() => {
     getWeather(coordinates, APIkey)
       .then((data) => {
-        const filterdata = filterWeatherData(data);
+        const filteredWeatherData = filterWeatherData(data);
 
-        setWeatherData(filterdata);
+        setWeatherData(filteredWeatherData);
       })
       .catch(console.error);
   }, []);
