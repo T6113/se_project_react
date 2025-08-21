@@ -152,6 +152,13 @@ function App() {
   // Handle card like/unlike functionality
   const handleCardLike = ({ id, isLiked }) => {
     const token = localStorage.getItem("jwt");
+
+    // Check if user is logged in
+    if (!token || !isLoggedIn) {
+      console.error("User must be logged in to like items");
+      return;
+    }
+
     // Check if this card is not currently liked
     !isLiked
       ? // if so, send a request to add the user's id to the card's likes array
@@ -161,7 +168,13 @@ function App() {
               cards.map((item) => (item._id === id ? updatedCard : item))
             );
           })
-          .catch((err) => console.log(err))
+          .catch((err) => {
+            console.log(err);
+            if (err.includes("401")) {
+              console.error("Authentication failed - logging out user");
+              handleSignOut();
+            }
+          })
       : // if not, send a request to remove the user's id from the card's likes array
         removeCardLike(id, token)
           .then((updatedCard) => {
@@ -169,29 +182,70 @@ function App() {
               cards.map((item) => (item._id === id ? updatedCard : item))
             );
           })
-          .catch((err) => console.log(err));
+          .catch((err) => {
+            console.log(err);
+            if (err.includes("401")) {
+              console.error("Authentication failed - logging out user");
+              handleSignOut();
+            }
+          });
   };
 
   const handleAddItemSubmitBtn = ({ name, imageUrl, weather }) => {
     const token = localStorage.getItem("jwt");
     addItem({ name, imageUrl, weather }, token)
       .then((newItem) => {
-        setClothingItems((prevItems) => [newItem, ...prevItems]);
+        // Ensure the new item has all required properties
+        const completeItem = {
+          _id: newItem._id || Date.now(), // Fallback ID if backend doesn't provide one
+          name: newItem.name || name,
+          imageUrl: newItem.imageUrl || imageUrl,
+          weather: newItem.weather || weather,
+          likes: newItem.likes || [],
+          owner: newItem.owner || currentUser?._id,
+          ...newItem, // Spread any additional properties from backend
+        };
+
+        setClothingItems((prevItems) => [completeItem, ...prevItems]);
         closeActiveModal();
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.error("Error adding item:", err);
+        // Optionally show user-friendly error message
+      });
   };
 
   const handleRemoveItem = (id) => {
     const token = localStorage.getItem("jwt");
+
+    // Check if user is logged in
+    if (!token || !isLoggedIn) {
+      console.error("User must be logged in to delete items");
+      closeActiveModal();
+      return;
+    }
+
     deleteItem(id, token)
-      .then((deletedItem) => {
+      .then(() => {
+        // Remove item from state after successful deletion
         setClothingItems((prevItems) =>
           prevItems.filter((item) => item._id !== id)
         );
-        // Optionally close modal or show feedback
+        // Close the modal after successful deletion
+        closeActiveModal();
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.error("Error deleting item:", err);
+
+        // If it's a 401 error, the token might be invalid
+        if (err.includes("401")) {
+          console.error("Authentication failed - logging out user");
+          handleSignOut(); // This will clear the invalid token
+        }
+
+        // Close modal even if delete fails to avoid UI getting stuck
+        closeActiveModal();
+      });
   };
 
   useEffect(() => {

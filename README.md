@@ -16,25 +16,17 @@ A modern React + Vite application that helps users decide what to wear based on 
 
 **Backend Repository:** [https://github.com/T6113/se_project_express](https://github.com/T6113/se_project_express)
 
-## Getting Started
 
-1. **Install dependencies:**
-   ```bash
-   npm install
-   ```
-2. **Start the development server:**
-   ```bash
-   npm run dev
-   ```
-3. **Open your browser:**
-   Visit [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal)
+### Quick Start
 
-## Project Structure
+1. **Start Backend:** Navigate to Express project → `npm run dev` (runs on port 3001)
+2. **Start Frontend:** Navigate to React project → `npm run dev` (runs on port 3000)
+3. **Open Browser:** Visit http://localhost:3000
 
-- `src/components/` — React components (App, Main, Profile, Sidebar, ItemCard, etc.)
-- `src/utils/` — API utilities and constants
-- `public/` — Static assets
-- `db.json` — Mock database for local API
+### Links
+
+- **App**: http://localhost:3000
+- **API**: http://localhost:3001
 
 ## Features
 
