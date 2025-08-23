@@ -2,7 +2,12 @@ import "./RegisterModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useState, useEffect } from "react";
 
-export default function RegisterModal({ onClose, isOpen, onRegister }) {
+export default function RegisterModal({
+  onClose,
+  isOpen,
+  onRegister,
+  onLoginClick,
+}) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
@@ -36,6 +41,10 @@ export default function RegisterModal({ onClose, isOpen, onRegister }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     onRegister({ email, password, name, avatar });
+  };
+
+  const handleLoginClick = () => {
+    onLoginClick();
   };
 
   return (
@@ -89,17 +98,25 @@ export default function RegisterModal({ onClose, isOpen, onRegister }) {
         />
       </label>
       <label htmlFor="register-avatar" className="modal__label">
-        Avatar URL{" "}
+        Avatar URL*{" "}
         <input
           type="url"
           name="avatar"
           className="modal__input"
           id="register-avatar"
           placeholder="Avatar URL"
+          required
           onChange={handleAvatarChange}
           value={avatar}
         />
       </label>
+      <button
+        type="button"
+        className="modal__login-link"
+        onClick={handleLoginClick}
+      >
+        or Login
+      </button>
     </ModalWithForm>
   );
 }

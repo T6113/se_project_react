@@ -1,2 +1,119 @@
-/* LoginModal uses the same styles as ModalWithForm and RegisterModal */
-/* All styling is inherited from ModalWithForm.css */
+@import url(../../vendor/fonts.css);
+
+/* Login Modal Specific Styles */
+.modal__content {
+  width: 496px;
+  height: 304px;
+  opacity: 1;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 1);
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.modal__title {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  margin: 0;
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-style: bold;
+  font-size: 16px;
+  line-height: 20px;
+  letter-spacing: 0%;
+  color: #000;
+}
+
+.modal__form {
+  position: absolute;
+  top: 76px; /* 28px title + 24px gap + 24px spacing */
+  left: 28px;
+  right: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__label {
+  margin: 0;
+  padding: 0;
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: #000;
+}
+
+.modal__input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 1);
+  background: transparent;
+  padding: 8px 0;
+  margin-top: 8px;
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  outline: none;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 1);
+}
+
+.modal__input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.modal__submit {
+  position: absolute;
+  top: 32px;
+  left: 28px;
+  width: 73px;
+  height: 36px;
+  background-color: rgba(0, 0, 0, 1);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.modal__submit:disabled {
+  background-color: rgba(0, 0, 0, 0.3);
+  cursor: not-allowed;
+}
+
+.modal__signup-link {
+  position: absolute;
+  top: 32px;
+  left: 113px; /* 28px (left margin) + 73px (button width) + 12px (gap) */
+  background: none;
+  border: none;
+  color: rgba(0, 0, 0, 0.5);
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.modal__signup-link:hover {
+  color: rgba(0, 0, 0, 1);
+}
+
+.modal__close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  cursor: pointer;
+}

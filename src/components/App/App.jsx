@@ -169,8 +169,9 @@ function App() {
             );
           })
           .catch((err) => {
-            console.log(err);
-            if (err.includes("401")) {
+            console.error("Error liking item:", err);
+            const errorMessage = err.message || err.toString() || err;
+            if (errorMessage.includes("401")) {
               console.error("Authentication failed - logging out user");
               handleSignOut();
             }
@@ -183,8 +184,9 @@ function App() {
             );
           })
           .catch((err) => {
-            console.log(err);
-            if (err.includes("401")) {
+            console.error("Error unliking item:", err);
+            const errorMessage = err.message || err.toString() || err;
+            if (errorMessage.includes("401")) {
               console.error("Authentication failed - logging out user");
               handleSignOut();
             }
@@ -237,10 +239,14 @@ function App() {
       .catch((err) => {
         console.error("Error deleting item:", err);
 
+        const errorMessage = err.message || err.toString() || err;
+
         // If it's a 401 error, the token might be invalid
-        if (err.includes("401")) {
+        if (errorMessage.includes("401")) {
           console.error("Authentication failed - logging out user");
           handleSignOut(); // This will clear the invalid token
+        } else if (errorMessage.includes("403")) {
+          console.error("Forbidden - You can only delete your own items");
         }
 
         // Close modal even if delete fails to avoid UI getting stuck
@@ -345,11 +351,13 @@ function App() {
             isOpen={activeModal === "register"}
             onClose={closeActiveModal}
             onRegister={handleRegister}
+            onLoginClick={handleLoginClick}
           />
           <LoginModal
             isOpen={activeModal === "login"}
             onClose={closeActiveModal}
             onLogin={handleLogin}
+            onRegisterClick={handleRegisterClick}
           />
           <EditProfileModal
             isOpen={activeModal === "edit-profile"}

@@ -2,11 +2,13 @@
 
 .card {
   width: 323px;
+  height: 328px;
   border: 1px solid #0000004d;
   border-radius: 18px;
   position: relative;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 .card__header {
@@ -58,6 +60,9 @@
 
 .card__image {
   width: 100%;
+  height: 100%;
   border-radius: 18px;
   cursor: pointer;
+  object-fit: cover;
+  object-position: center;
 }
