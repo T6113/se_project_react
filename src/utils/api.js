@@ -4,6 +4,11 @@ export function checkResponse(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
 }
 
+// Special response handler for delete operations (no JSON parsing needed)
+function checkDeleteResponse(res) {
+  return res.ok ? Promise.resolve() : Promise.reject(`Error: ${res.status}`);
+}
+
 // Helper function to get authorization headers
 function getAuthHeaders(token) {
   return {
@@ -31,7 +36,7 @@ function deleteItem(id, token) {
   return fetch(`${baseUrl}/items/${id}`, {
     method: "DELETE",
     headers: getAuthHeaders(token),
-  }).then(checkResponse);
+  }).then(checkDeleteResponse);
 }
 
 // Update user profile - token required

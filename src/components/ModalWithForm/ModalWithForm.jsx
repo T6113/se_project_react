@@ -20,7 +20,6 @@ function ModalWithForm({
           {children}
           <div className="modal__submit-btn">
             <button type="submit" className="modal__submit">
-              {" "}
               {buttonText}
             </button>
           </div>

@@ -1,86 +1,90 @@
 @import url(../../vendor/fonts.css);
 
-/* Login Modal Specific Styles */
+/* Login Modal Complete Override */
 .modal__content {
-  width: 496px;
-  height: 304px;
-  opacity: 1;
-  border-radius: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 1);
-  position: relative;
-  padding: 0;
-  box-sizing: border-box;
+  width: 496px !important;
+  height: 304px !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  background-color: rgba(255, 255, 255, 1) !important;
+  position: relative !important;
+  padding: 28px !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
 }
 
 .modal__title {
-  position: absolute;
-  top: 28px;
-  left: 28px;
-  margin: 0;
-  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-style: bold;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 0%;
-  color: #000;
+  margin: 0 0 24px 0 !important;
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  color: #000 !important;
 }
 
 .modal__form {
-  position: absolute;
-  top: 76px; /* 28px title + 24px gap + 24px spacing */
-  left: 28px;
-  right: 28px;
-  display: flex;
-  flex-direction: column;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 24px !important;
+  width: 100% !important;
+  flex: 1 !important;
 }
 
 .modal__label {
-  margin: 0;
-  padding: 0;
-  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
-  color: #000;
+  display: flex !important;
+  flex-direction: column !important;
+  margin: 0 !important;
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  color: #000 !important;
 }
 
 .modal__input {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 1);
-  background: transparent;
-  padding: 8px 0;
-  margin-top: 8px;
-  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 20px;
-  outline: none;
-  box-sizing: border-box;
-  color: rgba(0, 0, 0, 1);
+  width: 100% !important;
+  border: none !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 1) !important;
+  background: transparent !important;
+  padding: 8px 0 !important;
+  margin-top: 8px !important;
+  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+  color: rgba(0, 0, 0, 1) !important;
 }
 
 .modal__input::placeholder {
-  color: rgba(0, 0, 0, 0.5);
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Override ModalWithForm submit button positioning */
+.modal__submit-btn {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-top: 32px !important;
+  position: static !important;
+  justify-content: flex-start !important;
 }
 
 .modal__submit {
-  position: absolute;
-  top: 32px;
-  left: 28px;
   width: 73px;
   height: 36px;
   background-color: rgba(0, 0, 0, 1);
   color: white;
   border: none;
-  padding: 8px 16px;
+  padding: 0; /* Remove padding to ensure exact 73px width */
   font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
   cursor: pointer;
   border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .modal__submit:disabled {
@@ -89,9 +93,6 @@
 }
 
 .modal__signup-link {
-  position: absolute;
-  top: 32px;
-  left: 113px; /* 28px (left margin) + 73px (button width) + 12px (gap) */
   background: none;
   border: none;
   color: rgba(0, 0, 0, 0.5);
@@ -110,10 +111,11 @@
 
 .modal__close {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: -8px;
+  right: 2px;
   border: none;
   background-color: transparent;
   padding: 0;
   cursor: pointer;
+  z-index: 1002;
 }

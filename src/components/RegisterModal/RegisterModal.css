@@ -1,43 +1,36 @@
 @import url(../../vendor/fonts.css);
 
-/* Register Modal Specific Styles */
+/* Register Modal Complete Override */
 .modal__content {
   width: 496px;
   height: 456px;
-  opacity: 1;
   border-radius: 20px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: rgba(255, 255, 255, 1);
   position: relative;
-  padding: 0;
+  padding: 28px;
   box-sizing: border-box;
 }
 
 .modal__title {
-  position: absolute;
-  top: 28px;
-  left: 28px;
-  margin: 0;
+  margin: 0 0 24px 0;
   font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
   font-weight: 700;
-  font-style: bold;
   font-size: 16px;
   line-height: 20px;
-  letter-spacing: 0%;
   color: #000;
 }
 
 .modal__form {
-  position: absolute;
-  top: 76px; /* 28px title + 24px gap + 24px spacing */
-  left: 28px;
-  right: 28px;
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 100%;
 }
 
 .modal__label {
+  display: flex;
+  flex-direction: column;
   margin: 0;
   padding: 0;
   font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
@@ -66,10 +59,14 @@
   color: rgba(0, 0, 0, 0.5);
 }
 
+.modal__submit-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
 .modal__submit {
-  position: absolute;
-  bottom: 56px; /* 56px from bottom to accommodate the "or Login" link */
-  left: 28px;
   width: 84px;
   height: 36px;
   background-color: rgba(0, 0, 0, 1);
@@ -90,9 +87,6 @@
 }
 
 .modal__login-link {
-  position: absolute;
-  bottom: 56px; /* Same level as submit button */
-  left: 140px; /* 28px (left margin) + 84px (button width) + 12px (gap) + 16px extra space */
   background: none;
   border: none;
   color: rgba(0, 0, 0, 0.5);
@@ -111,10 +105,11 @@
 
 .modal__close {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: -8px;
+  right: 2px;
   border: none;
   background-color: transparent;
   padding: 0;
   cursor: pointer;
+  z-index: 1002;
 }
