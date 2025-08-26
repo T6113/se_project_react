@@ -1,121 +1,194 @@
 @import url(../../vendor/fonts.css);
 
-/* Login Modal Complete Override */
-.modal__content {
+/* Modal Overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #0000004d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+.modal_opened {
+  visibility: visible;
+}
+
+/* Login Modal Content */
+.modal__content_type_login {
   width: 496px !important;
   height: 304px !important;
-  border-radius: 20px !important;
-  border: 1px solid rgba(0, 0, 0, 0.2) !important;
-  background-color: rgba(255, 255, 255, 1) !important;
-  position: relative !important;
-  padding: 28px !important;
-  box-sizing: border-box !important;
-  display: flex !important;
-  flex-direction: column !important;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background-color: white;
+  position: relative;
+  padding: 0;
+  box-sizing: border-box;
+  z-index: 1001;
 }
 
-.modal__title {
-  margin: 0 0 24px 0 !important;
-  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif !important;
-  font-weight: 700 !important;
-  font-size: 16px !important;
-  line-height: 20px !important;
-  color: #000 !important;
-}
-
-.modal__form {
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 24px !important;
-  width: 100% !important;
-  flex: 1 !important;
-}
-
-.modal__label {
-  display: flex !important;
-  flex-direction: column !important;
-  margin: 0 !important;
-  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif !important;
-  font-weight: 700 !important;
-  font-size: 16px !important;
-  line-height: 20px !important;
-  color: #000 !important;
-}
-
-.modal__input {
-  width: 100% !important;
-  border: none !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 1) !important;
-  background: transparent !important;
-  padding: 8px 0 !important;
-  margin-top: 8px !important;
-  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif !important;
-  font-size: 16px !important;
-  line-height: 20px !important;
-  outline: none !important;
-  box-sizing: border-box !important;
-  color: rgba(0, 0, 0, 1) !important;
-}
-
-.modal__input::placeholder {
-  color: rgba(0, 0, 0, 0.5) !important;
-}
-
-/* Override ModalWithForm submit button positioning */
-.modal__submit-btn {
-  display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
-  margin-top: 32px !important;
-  position: static !important;
-  justify-content: flex-start !important;
-}
-
-.modal__submit {
-  width: 73px;
-  height: 36px;
-  background-color: rgba(0, 0, 0, 1);
-  color: white;
-  border: none;
-  padding: 0; /* Remove padding to ensure exact 73px width */
-  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+.modal__title_type_login {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+  margin: 0;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
-  cursor: pointer;
-  border-radius: 4px;
+  color: black;
+}
+
+.modal__form_type_login {
+  position: absolute;
+  top: 76px;
+  left: 28px;
+  width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.modal__label_type_login {
+  display: block;
+  margin-bottom: 0;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: black;
+}
+
+.modal__input_type_login {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid black;
+  background: transparent;
+  padding: 8px 0;
+  margin: 4px 0 0 0;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 16px;
+  outline: none;
+  color: black;
   box-sizing: border-box;
 }
 
-.modal__submit:disabled {
-  background-color: rgba(0, 0, 0, 0.3);
-  cursor: not-allowed;
+.modal__input_type_login::placeholder {
+  color: rgba(0, 0, 0, 0.5);
 }
 
-.modal__signup-link {
-  background: none;
-  border: none;
-  color: rgba(0, 0, 0, 0.5);
-  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+.modal__input_type_login_error {
+  border-bottom: 1px solid #ff0000 !important;
+}
+
+.modal__error_type_login {
+  display: block;
+  color: #ff0000;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  margin-top: 4px;
+  margin-bottom: 0;
+}
+
+/* Login Modal Buttons - positioned within the FORM not the modal */
+.modal__submit-btn_type_login {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal__submit_type_login {
+  width: 73px !important;
+  height: 36px !important;
+  background-color: black !important;
+  color: white !important;
+  border: none !important;
+  font-family: "Cabinet Grotesk", Arial, sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 16px !important;
+  line-height: 20px !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.modal__submit_type_login:disabled {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  cursor: not-allowed !important;
+}
+
+.modal__link_type_login {
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
-  cursor: pointer;
-  text-decoration: underline;
-  padding: 0;
-}
-
-.modal__signup-link:hover {
-  color: rgba(0, 0, 0, 1);
-}
-
-.modal__close {
-  position: absolute;
-  top: -8px;
-  right: 2px;
+  text-decoration-line: underline;
+  color: black;
+  background: none;
   border: none;
-  background-color: transparent;
+  cursor: pointer;
   padding: 0;
+  margin: 0;
+}
+
+.modal__link_type_login:hover {
+  opacity: 0.8;
+}
+
+.modal__signup-link_type_login {
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.5);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.modal__signup-link_type_login:hover {
+  color: black;
+  opacity: 0.8;
+}
+
+.modal__submit_type_login:disabled {
+  background-color: rgba(0, 0, 0, 0.3) !important;
+  cursor: not-allowed !important;
+}
+
+/* Close button */
+.modal__close_type_login {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  border: none;
+  background: transparent;
   cursor: pointer;
   z-index: 1002;
+  padding: 0;
+}
+
+.modal__close-btn_type_login {
+  width: 20px;
+  height: 20px;
+  display: block;
+  opacity: 0.6;
+  filter: invert(0.3);
+}
+
+.modal__close_type_login:hover .modal__close-btn_type_login {
+  opacity: 0.7;
+  filter: invert(0.2);
 }

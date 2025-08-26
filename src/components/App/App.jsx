@@ -97,7 +97,7 @@ function App() {
   };
 
   const handleRegister = ({ email, password, name, avatar }) => {
-    signup({ email, password, name, avatar })
+    return signup({ email, password, name, avatar })
       .then(() => {
         return signin({ email, password });
       })
@@ -114,12 +114,13 @@ function App() {
       })
       .catch((err) => {
         console.error("Registration failed:", err);
+        throw err; // Re-throw the error so RegisterModal can catch it
       });
   };
 
   // Login handler function
   const handleLogin = ({ email, password }) => {
-    signin({ email, password })
+    return signin({ email, password })
       .then((res) => {
         // Check that server gave access and store token
         localStorage.setItem("jwt", res.token);
@@ -133,6 +134,7 @@ function App() {
       })
       .catch((err) => {
         console.error("Login failed:", err);
+        throw err; // Re-throw the error so LoginModal can catch it
       });
   };
 

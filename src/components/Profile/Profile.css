@@ -1,6 +1,14 @@
 .profile {
   display: flex;
   gap: 116px; /* 116px gap between sidebar and clothing items */
+  padding: 0 20px; /* Match page__content padding */
+  width: 1360px; /* Match header's max-width */
+  margin: 0 auto; /* Center the profile */
+}
+
+.profile__sidebar {
+  flex-shrink: 0;
+  width: 220px;
 }
 
 .profile__clothing-items {

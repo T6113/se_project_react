@@ -1,76 +1,91 @@
 @import url(../../vendor/fonts.css);
 
-/* Edit Profile Modal Specific Styles */
-.modal__content {
+.modal__content_type_editprofile {
+  background: white;
   width: 496px;
-  height: 304px;
-  opacity: 1;
+  height: 275px;
   border-radius: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  background-color: rgba(255, 255, 255, 1);
   position: relative;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.modal__title {
-  position: absolute;
-  top: 28px;
-  left: 28px;
-  margin: 0;
-  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
-  font-weight: 700;
-  font-style: bold;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 0%;
-  color: #000;
-}
-
-.modal__form {
-  position: absolute;
-  top: 76px; /* 28px title + 24px gap + 24px spacing */
-  left: 28px;
-  right: 28px;
+  padding: 30px;
   display: flex;
   flex-direction: column;
+  gap: 16px;
 }
 
-.modal__label {
-  margin: 0;
-  padding: 0;
-  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+.modal__title_type_editprofile {
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
+  margin: 0;
   color: #000;
 }
 
-.modal__input {
-  width: 100%;
+.modal__close_type_editprofile {
+  position: absolute;
+  top: 20px;
+  right: 30px;
   border: none;
-  border-bottom: 1px solid rgba(0, 0, 0, 1);
   background: transparent;
-  padding: 8px 0;
-  margin-top: 8px;
-  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
-  font-size: 16px;
-  line-height: 20px;
-  outline: none;
-  box-sizing: border-box;
+  cursor: pointer;
+  z-index: 1002;
+  padding: 0;
 }
 
-.modal__submit {
-  position: absolute;
-  top: 32px;
-  left: 28px;
+.modal__close-btn_type_editprofile {
+  width: 20px;
+  height: 20px;
+  display: block;
+  opacity: 0.6;
+  filter: invert(0.3);
+}
+
+.modal__close_type_editprofile:hover .modal__close-btn_type_editprofile {
+  opacity: 0.7;
+  filter: invert(0.2);
+}
+
+.modal__form_type_editprofile {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.modal__label_type_editprofile {
+  color: #000;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal__input_type_editprofile {
+  color: #000;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 8px 0;
+  border: none;
+  border-bottom: 1px solid #000;
+  background: transparent;
+  outline: none;
+}
+
+.modal__submit-btn_type_editprofile {
+  margin-top: 24px;
+}
+
+.modal__submit_type_editprofile {
   width: 128px;
   height: 36px;
-  background-color: #000;
+  background: #000;
   color: white;
   border: none;
-  padding: 8px 16px;
-  font-family: "Cabinet Grotesk", Helvetica, Arial, sans-serif;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
   font-weight: 700;
   font-size: 16px;
   line-height: 20px;
@@ -78,12 +93,11 @@
   border-radius: 4px;
 }
 
-.modal__close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  cursor: pointer;
+.modal__submit_type_editprofile:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.modal__submit_type_editprofile:disabled {
+  background: rgba(0, 0, 0, 0.3);
+  cursor: not-allowed;
 }

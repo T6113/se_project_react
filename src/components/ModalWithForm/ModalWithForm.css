@@ -16,6 +16,7 @@
   visibility: visible;
 }
 
+
 /* Minimal base styles - let individual modals override everything */
 .modal__content {
   background-color: #fff;
