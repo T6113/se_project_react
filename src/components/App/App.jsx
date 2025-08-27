@@ -198,10 +198,13 @@ function App() {
   const handleAddItemSubmitBtn = ({ name, imageUrl, weather }) => {
     const token = localStorage.getItem("jwt");
     addItem({ name, imageUrl, weather }, token)
-      .then((newItem) => {
+      .then((response) => {
+        // Extract the actual item from the response data
+        const newItem = response.data || response;
+
         // Ensure the new item has all required properties
         const completeItem = {
-          _id: newItem._id || Date.now(), // Fallback ID if backend doesn't provide one
+          _id: newItem._id,
           name: newItem.name || name,
           imageUrl: newItem.imageUrl || imageUrl,
           weather: newItem.weather || weather,

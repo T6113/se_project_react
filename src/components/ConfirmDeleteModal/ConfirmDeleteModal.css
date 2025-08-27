@@ -1,0 +1,98 @@
+@import url(../../vendor/fonts.css);
+
+/* Delete Confirmation Modal Specific Styles */
+.modal__content_type_delete-confirm {
+  width: 670px;
+  height: 280px;
+  background-color: white;
+  border-radius: 16px;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+}
+
+.modal__close_type_delete-confirm {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1003;
+  transition: opacity 0.2s ease;
+  padding: 0;
+}
+
+.modal__close_type_delete-confirm:hover {
+  opacity: 0.8;
+}
+
+.modal__close-btn_type_delete-confirm {
+  width: 20px;
+  height: 20px;
+  opacity: 1;
+  display: block;
+  filter: invert(0.5);
+}
+
+.modal__close_type_delete-confirm:hover .modal__close-btn_type_delete-confirm {
+  opacity: 0.8;
+}
+
+.modal__text_type_delete-confirm {
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  color: black;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.modal__button_type_delete-confirm {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: "Cabinet Grotesk", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+  padding: 8px 0;
+  transition: opacity 0.2s ease;
+  text-align: center;
+  width: auto;
+}
+
+.modal__button_type_delete-confirm:hover {
+  opacity: 0.8;
+}
+
+.modal__button_type_delete-confirm_action_delete {
+  color: #ff0000;
+  margin-bottom: 24px;
+}
+
+.modal__button_type_delete-confirm_action_cancel {
+  color: black;
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .modal__content_type_delete-confirm {
+    width: 90vw;
+    height: auto;
+    max-width: 670px;
+    padding: 40px 20px;
+  }
+}

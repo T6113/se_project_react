@@ -4,14 +4,14 @@
 
 .page {
   background-color: #fff;
-  max-width: 1440px;
+  max-width: 1600px;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .page__content {
-  max-width: 1360px;
+  max-width: 1520px;
   margin: 0 auto;
   padding: 0 20px;
   flex: 1 0 auto;

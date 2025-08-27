@@ -2,7 +2,7 @@
   display: flex;
   gap: 116px; /* 116px gap between sidebar and clothing items */
   padding: 0 20px; /* Match page__content padding */
-  width: 1360px; /* Match header's max-width */
+  width: 1360px; /* Match header max-width */
   margin: 0 auto; /* Center the profile */
 }
 
