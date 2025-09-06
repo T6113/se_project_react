@@ -8,7 +8,8 @@
     "start": "nodemon index.js",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "npm run build && scp -r ./dist/* thomishamyers@whatwewear.crabdance.com:/home/thomishamyers/frontend"
   },
   "dependencies": {
     "express": "^5.1.0",
@@ -39,5 +40,5 @@
   "bugs": {
     "url": "https://github.com/T6113/se_project_react/issues"
   },
-  "homepage": "https://github.com/T6113/se_project_react#readme"
+  "homepage": "http://whatwewear.crabdance.com"
 }

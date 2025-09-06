@@ -1,6 +1,8 @@
 import { checkResponse } from "./api";
 
-const baseUrl = "http://localhost:3001";
+const baseUrl = process.env.NODE_ENV === "production" 
+  ? "http://api.whatwewear.crabdance.com"
+  : "http://localhost:3001";
 
 // User registration
 export function signup({ name, avatar, email, password }) {
