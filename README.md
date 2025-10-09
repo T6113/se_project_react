@@ -1,63 +1,79 @@
-# Weather Wardrobe React App
+# WTWR (What to Wear?) - React Frontend
 
-A modern React + Vite application that helps users decide what to wear based on the weather. The app features:
+A responsive React application that provides weather-based clothing recommendations with user authentication and social features.
 
-- Weather display with real-time temperature and city info
-- Clothing item cards filtered by weather type
-- Add, preview, and remove clothing items
-- User authentication (signup, login, logout)
-- Profile section with sidebar and clothing management
-- Like/unlike clothing items
-- Responsive, clean UI with custom styling
+## 🌐 Live Application
 
-## Backend Repository
+**Visit the deployed application:** [https://whatwewear.crabdance.com](https://whatwewear.crabdance.com)
 
-**⚠️ Important :** This React frontend requires the backend server to be running for full functionality including authentication, user management, and data persistence.
+## 📋 Project Overview
 
-**Backend Repository:** [https://github.com/T6113/se_project_express](https://github.com/T6113/se_project_express)
+WTWR is a full-stack web application that helps users make informed clothing decisions based on current weather conditions. Users can create accounts, manage their wardrobe, and interact with clothing items from the community.
 
+## ✨ Key Features
 
-### Quick Start
+- **Weather Integration** - Real-time weather data with location-based recommendations
+- **User Authentication** - Secure signup, login, and profile management
+- **Wardrobe Management** - Add, view, and delete personal clothing items
+- **Social Features** - Like and interact with other users' clothing items
+- **Responsive Design** - Optimized for desktop and mobile devices
+- **Protected Routes** - Secure user-specific functionality
 
-1. **Start Backend:** Navigate to Express project → `npm run dev` (runs on port 3001)
-2. **Start Frontend:** Navigate to React project → `npm run dev` (runs on port 3000)
-3. **Open Browser:** Visit http://localhost:3000
+## 🛠 Technologies Used
 
-### Links
+### Frontend
 
-- **App**: http://localhost:3000
-- **API**: http://localhost:3001
+- **React** - Component-based UI library
+- **Vite** - Modern build tool and development server
+- **React Router** - Client-side routing and navigation
+- **Context API** - State management for user authentication
+- **CSS3** - Custom responsive styling
+- **JavaScript ES6+** - Modern JavaScript features
 
-## Features
+### Backend Integration
 
-- Weather-based clothing suggestions
-- User authentication (register, login, logout)
-- Add and remove clothing items
-- Like/unlike clothing items functionality
-- Profile management and editing
-- Protected routes for authenticated users
-- Avatar placeholders for users
-- Responsive design
+- **RESTful API** - Communication with Express.js backend
+- **JWT Authentication** - Secure token-based authentication
+- **HTTPS** - Encrypted data transmission
 
-## Tech Stack
+## 🔗 Related Repositories
 
-**Frontend:**
+**Backend API:** [https://github.com/T6113/se_project_express](https://github.com/T6113/se_project_express)
 
-- React
-- Vite
-- CSS Modules
-- React Context API
-- React Router
-- Fetch API
-- Modern JavaScript (ES6+)
+## 🏗 Architecture
 
-**Backend:**
+This frontend application communicates with a secure REST API backend that handles:
 
-- Express.js server (separate repository)
-- JWT authentication
-- MongoDB/Database integration
-- RESTful API endpoints
+- User authentication and authorization
+- Data persistence with MongoDB
+- Request validation and error handling
+- Logging and monitoring
+
+## 📱 Usage
+
+1. **Visit** [https://whatwewear.crabdance.com](https://whatwewear.crabdance.com)
+2. **Sign up** for a new account or log in
+3. **View** weather-appropriate clothing recommendations
+4. **Add** your own clothing items with images
+5. **Like** and interact with community items
+6. **Manage** your profile and wardrobe
+
+## 🔧 Local Development
+
+```bash
+# Clone the repository
+git clone https://github.com/T6113/se_project_react.git
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+
+# Build for production
+npm run build
+```
 
 ---
 
-Developed by Thomisha Myers, 2025
+**Developed by Thomisha Myers** | **Full-Stack Web Development** | **2025**
