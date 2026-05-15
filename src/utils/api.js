@@ -1,7 +1,14 @@
 const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 export function checkResponse(res) {
-  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+  if (res.ok) {
+    return res.json();
+  }
+
+  return res
+    .json()
+    .then((data) => Promise.reject(data.message || `Error: ${res.status}`))
+    .catch(() => Promise.reject(`Error: ${res.status}`));
 }
 
 // Special response handler for delete operations (no JSON parsing needed)

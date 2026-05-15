@@ -46,9 +46,11 @@ export default function RegisterModal({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onRegister({ email, password, name, avatar }).catch(() => {
+    onRegister({ email, password, name, avatar }).catch((err) => {
       setErrorMessage(
-        "Registration failed. Please check your information and try again."
+        typeof err === "string"
+          ? err
+          : "Registration failed. Please check your information and try again."
       );
     });
   };
