@@ -1,4 +1,8 @@
-const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:3001";
+const baseUrl =
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.DEV
+    ? "http://localhost:3001"
+    : "https://se-project-express-2dg2.onrender.com");
 
 export function checkResponse(res) {
   if (res.ok) {

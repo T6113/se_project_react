@@ -1,7 +1,10 @@
 import { checkResponse } from "./api";
 
 const baseUrl =
-  import.meta.env.VITE_API_URL || "http://localhost:3001";
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.DEV
+    ? "http://localhost:3001"
+    : "https://se-project-express-2dg2.onrender.com");
 
 // User registration
 export function signup({ name, avatar, email, password }) {
