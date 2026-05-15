@@ -1,7 +1,4 @@
-const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? "https://api.whatwewear.crabdance.com"
-    : "http://localhost:3001";
+const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 export function checkResponse(res) {
   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);

@@ -1,9 +1,7 @@
 import { checkResponse } from "./api";
 
 const baseUrl =
-  process.env.NODE_ENV === "production"
-    ? "https://api.whatwewear.crabdance.com"
-    : "http://localhost:3001";
+  import.meta.env.VITE_API_URL || "http://localhost:3001";
 
 // User registration
 export function signup({ name, avatar, email, password }) {
